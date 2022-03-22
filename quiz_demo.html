@@ -1,5 +1,5 @@
 <html lang="en">
-<head>
+	<head>
 		<title>GCVS Quiz Demo</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="" />
@@ -9,135 +9,125 @@
     <h1>GCVS Online Learning Suitability Questionnaire</h1>
 
     <form name="quiz" action="javascript:;" onsubmit="myFunction(this)">
-			<fieldset>
-      <ol>
+		<fieldset>
+			<ol>
 				<li>Which grade band are you interested in?<br>
-          <input type="radio" name="grade" value="ES">1-4<br>
-          <input type="radio" name="grade" value="MS">5-8<br>
-          <input type="radio" name="grade" value="HS">9-12<br>
-        </li>
-        <li>Do you consider yourself / your student a self-starter?<br>
-          <input type="radio" name="self_starter" value=3>Yes, I am great at initiating tasks<br>
-          <input type="radio" name="self_starter" value=2>No, it is hard to begin<br>
-          <input type="radio" name="self_starter" value=1>It depends<br>
-        </li>
-        <li>Who is the most responsible for what and how much you learn?<br>
-          <input type="radio" name="responsible" value=2>Teacher is the most responsible person<br>
-          <input type="radio" name="responsible" value=3>Student is the most responsible<br>
-          <input type="radio" name="responsible" value=1>Parents and school administrators<br>
-        </li>
-        <li>Which statement best describe student's computer skills?<br>
-          <input type="radio" name="skills" value=3>I am comfortable with electronic mail, web browsing, word processing, and file management.<br>
-          <input type="radio" name="skills" value=2>I have basic computer skills, I could figure it out with basic instructions.<br>
-          <input type="radio" name="skills" value=1>I am not sure if my skills are up to date, and computers can frustrate me.<br>
-        </li>
-        <li>As a student, I:<br>
-            <input type="radio" name="assist" value=3>Can do my assignments, stay focused, and finish coursework ahead of time without being reminded.<br>
-            <input type="radio" name="assist" value=2>Need reminders from the teacher to stay focused and finish coursework on time.<br>
-            <input type="radio" name="assist" value=1>Need a lot of assistance staying focused and motivated to complete my coursework.<br>
-          </li>
-        <li>How often do you submit your assignments on time?<br>
-          <input type="radio" name="assignment" value=3>I always complete assignments thoroughly and on time.<br>
-          <input type="radio" name="assignment" value=2>I usually complete assignments on time.<br>
-          <input type="radio" name="assignment" value=1>Rarely. I have a problem starting tasks and often do no complete them.<br>
-        </li>
-        <li>I find social interaction very important in school:<br>
-          <input type="radio" name="interaction" value=1>Yes, I need constant communication with peers to feel as a part of community<br>
-          <input type="radio" name="interaction" value=3>No, people make me anxious.<br>
-          <input type="radio" name="interaction" value=2>Somewhat. I am ok either way<br>
-        </li>
-        <li>My student will have a Learning Coach (LC) who will be available during the school hours.<br>
-          <input type="radio" name="lc" value=3>Yes<br>
-          <input type="radio" name="lc" value=2>No<br>
-          <input type="radio" name="lc" value=1>Not for all school day<br>
-        </li>
-        <li>I am comfortable traveling to all on-site, live assessments like MCAS<br>
-          <input type="radio" name="live" value=3>Yes<br>
-          <input type="radio" name="live" value=1>No<br>
-          <input type="radio" name="live" value=2>I am only comfortable testing remotely<br>
-        </li>
-        <li>My student / I am great self-advocate and easily communicate any potential problems with school staff.<br>
-          <input type="radio" name="communicate" value=3>Yes, I am a strong communicator.<br>
-          <input type="radio" name="communicate" value=1>No, I prefer people reach out to me.<br>
-          <input type="radio" name="communicate" value=2>Sometimes<br>
-        </li>
-        <li>How often do you/ your student check email?<br>
-          <input type="radio" name="email" value=4>Constantly<br>
-          <input type="radio" name="email" value=3>1-2 times a day<br>
-          <input type="radio" name="email" value=2>Weekly<br>
-          <input type="radio" name="email" value="-3">I don't use an email.<br>
-        </li>
-      </ol>
+				  <input type="radio" name="grade" value="ES">1-4<br>
+				  <input type="radio" name="grade" value="MS">5-8<br>
+				  <input type="radio" name="grade" value="HS">9-12<br>
+				</li>
+				<li>Do you consider yourself / your student a self-starter?<br>
+				  <input type="radio" name="self_starter" value=3>Yes, I am great at initiating tasks<br>
+				  <input type="radio" name="self_starter" value=2>No, it is hard to begin<br>
+				  <input type="radio" name="self_starter" value=1>It depends<br>
+				</li>
+				<li>Who is the most responsible for what and how much you learn?<br>
+				  <input type="radio" name="responsible" value=2>Teacher is the most responsible person<br>
+				  <input type="radio" name="responsible" value=3>Student is the most responsible<br>
+				  <input type="radio" name="responsible" value=1>Parents and school administrators<br>
+				</li>
+				<li>Which statement best describe student's computer skills?<br>
+				  <input type="radio" name="skills" value=3>I am comfortable with electronic mail, web browsing, word processing, and file management.<br>
+				  <input type="radio" name="skills" value=2>I have basic computer skills, I could figure it out with basic instructions.<br>
+				  <input type="radio" name="skills" value=1>I am not sure if my skills are up to date, and computers can frustrate me.<br>
+				</li>
+				<li>As a student, I:<br>
+					<input type="radio" name="assist" value=3>Can do my assignments, stay focused, and finish coursework ahead of time without being reminded.<br>
+					<input type="radio" name="assist" value=2>Need reminders from the teacher to stay focused and finish coursework on time.<br>
+					<input type="radio" name="assist" value=1>Need a lot of assistance staying focused and motivated to complete my coursework.<br>
+				  </li>
+				<li>How often do you submit your assignments on time?<br>
+				  <input type="radio" name="assignment" value=3>I always complete assignments thoroughly and on time.<br>
+				  <input type="radio" name="assignment" value=2>I usually complete assignments on time.<br>
+				  <input type="radio" name="assignment" value=1>Rarely. I have a problem starting tasks and often do no complete them.<br>
+				</li>
+				<li>I find social interaction very important in school:<br>
+				  <input type="radio" name="interaction" value=1>Yes, I need constant communication with peers to feel as a part of community<br>
+				  <input type="radio" name="interaction" value=3>No, people make me anxious.<br>
+				  <input type="radio" name="interaction" value=2>Somewhat. I am ok either way<br>
+				</li>
+				<li>My student will have a Learning Coach (LC) who will be available during the school hours.<br>
+				  <input type="radio" name="lc" value=3>Yes<br>
+				  <input type="radio" name="lc" value=2>No<br>
+				  <input type="radio" name="lc" value=1>Not for all school day<br>
+				</li>
+				<li>I am comfortable traveling to all on-site, live assessments like MCAS<br>
+				  <input type="radio" name="live" value=3>Yes<br>
+				  <input type="radio" name="live" value=1>No<br>
+				  <input type="radio" name="live" value=2>I am only comfortable testing remotely<br>
+				</li>
+				<li>My student / I am great self-advocate and easily communicate any potential problems with school staff.<br>
+				  <input type="radio" name="communicate" value=3>Yes, I am a strong communicator.<br>
+				  <input type="radio" name="communicate" value=1>No, I prefer people reach out to me.<br>
+				  <input type="radio" name="communicate" value=2>Sometimes<br>
+				</li>
+				<li>How often do you/ your student check email?<br>
+				  <input type="radio" name="email" value=4>Constantly<br>
+				  <input type="radio" name="email" value=3>1-2 times a day<br>
+				  <input type="radio" name="email" value=2>Weekly<br>
+				  <input type="radio" name="email" value="-3">I don't use an email.<br>
+				</li>
+			</ol>
 			<p class="results">Results: </p>
 			<input type="submit" id='btn'>
-			</fieldset>
+		</fieldset>
     </form>
+	<script type="text/javascript">
+		function myFunction() {
+			var params = '';
+			const radioButtons = document.querySelectorAll('input[type="radio"]');
+			var totalValue = 0;
+			var grade = document.quiz.elements[1].value;
+			for( var i=0; i<document.quiz.elements.length; i++ )
+			{
+				if (document.quiz.elements[i].checked) {
+					var fieldName = document.quiz.elements[i].name;
+					var fieldValue = document.quiz.elements[i].value;
+					if (fieldName != "grade") {
 
-		<script type="text/javascript">
-			function myFunction() {
-				var params = '';
-				const radioButtons = document.querySelectorAll('input[type="radio"]');
-				var totalValue = 0;
-				var grade = document.quiz.elements[1].value;
-				for( var i=0; i<document.quiz.elements.length; i++ )
-				{
-					if (document.quiz.elements[i].checked) {
-						var fieldName = document.quiz.elements[i].name;
-						var fieldValue = document.quiz.elements[i].value;
-						if (fieldName != "grade") {
-
-							// weighted values
-							if (grade == "MS" && fieldName == "self_starter"){
-								fieldValue = fieldValue * 2
-							}
-
-							if (grade == "HS" && fieldName == "self_starter"){
-								fieldValue = fieldValue * 2
-							}
-
-							if (grade == "HS" && fieldName == "interaction"){
-								fieldValue = fieldValue * 3
-							}
-
-							if (grade == "MS" && fieldName == "interaction"){
-								fieldValue = fieldValue * 2
-							}
-
-							if (grade == "ES" && fieldName == "lc"){
-								fieldValue = fieldValue * 3
-							}
-
-							if (grade == "MS" && fieldName == "lc"){
-								fieldValue = fieldValue * 2
-							}
-
-							if (grade == "MS" && fieldName == "live"){
-								fieldValue = fieldValue * 2
-							}
-
-							if (grade == "HS" && fieldName == "live"){
-								fieldValue = fieldValue * 2
-							}
-
-							totalValue += Number(fieldValue);
+						// weighted values; NEEDS TO BE TWEAKED
+						if (grade == "MS" && fieldName == "self_starter"){
+							fieldValue = fieldValue * 2
 						}
+						if (grade == "HS" && fieldName == "self_starter"){
+							fieldValue = fieldValue * 2
+						}
+						if (grade == "HS" && fieldName == "interaction"){
+							fieldValue = fieldValue * 3
+						}
+						if (grade == "MS" && fieldName == "interaction"){
+							fieldValue = fieldValue * 2
+						}
+						if (grade == "ES" && fieldName == "lc"){
+							fieldValue = fieldValue * 3
+						}
+						if (grade == "MS" && fieldName == "lc"){
+							fieldValue = fieldValue * 2
+						}
+						if (grade == "MS" && fieldName == "live"){
+							fieldValue = fieldValue * 2
+						}
+						if (grade == "HS" && fieldName == "live"){
+							fieldValue = fieldValue * 2
+						}
+						totalValue += Number(fieldValue);
 					}
 				}
-				//min value if all questions answered: 6
-				//mid value: 19
-				//Max value if all questions answered: 31+
-				if (totalValue < 13){
-					document.querySelector("p").innerHTML = "Results: Remote learning may not be the best option for you.";
-				}
-
-				if (totalValue >= 13 && totalValue <=27){
-					document.querySelector("p").innerHTML = "Results: Remote learning may be a good option for you!";
-				}
-
-				if (totalValue > 27){
-					document.querySelector("p").innerHTML = "Results: Remote learning looks like a great option for you!";
-				}
 			}
-		</script>
+			//min value if all questions answered: 6
+			//mid value: 19
+			//Max value if all questions answered: 31+
+			// NEEDS TO BE TWEAKED
+			if (totalValue < 13){
+				document.querySelector("p").innerHTML = "Results: Remote learning may not be the best option for you.";
+			}
+			if (totalValue >= 13 && totalValue <=27){
+				document.querySelector("p").innerHTML = "Results: Remote learning may be a good option for you!";
+			}
+			if (totalValue > 27){
+				document.querySelector("p").innerHTML = "Results: Remote learning looks like a great option for you!";
+			}
+		}
+	</script>
   </body>
 </html>
