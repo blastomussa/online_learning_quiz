@@ -2,15 +2,31 @@
 	<head>
 		<title>GCVS Quiz Demo</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="" />
+		<style media="screen">
+			fieldset {
+				background-color: #eeeeee;
+				font-size: large;
+				border-color: #245fae;
+			}
+			legend {
+				background-color: #245fae;
+				font-size: xx-large;
+				color: white;
+				padding: 5px 10px;
+			}
+			p {
+				font-size: large;
+			}
+			input {
+				font-size: large;
+			}
+		</style>
 	</head>
   <body>
-
-    <h1>GCVS Online Learning Suitability Questionnaire</h1>
-
-    <form name="quiz" action="javascript:;" onsubmit="myFunction(this)">
+    <form name="quiz" action="javascript:;" onsubmit="calculate(this)">
 		<fieldset>
-			<ol>
+			<legend>GCVS Online Learning Sustainability Questionnaire</legend>
+			<ol id="questions">
 				<li>Which grade band are you interested in?<br>
 				  <input type="radio" name="grade" value="ES">1-4<br>
 				  <input type="radio" name="grade" value="MS">5-8<br>
@@ -68,14 +84,29 @@
 				  <input type="radio" name="email" value="-3">I don't use an email.<br>
 				</li>
 			</ol>
-			<p class="results">Results: </p>
+			<p id="results"></p>
 			<input type="submit" id='btn'>
 		</fieldset>
     </form>
 	<script type="text/javascript">
-		function myFunction() {
-			var params = '';
+		function toggle_hide() {
+			var x = document.getElementById("questions");
+		  if (x.style.display === "none") {
+		    x.style.display = "block";
+		  } else {
+		    x.style.display = "none";
+		  }
+		}
+		function clear_radio() {
 			const radioButtons = document.querySelectorAll('input[type="radio"]');
+			for( var i=0; i<radioButtons.length; i++ ) {
+				radioButtons[i].checked = false;
+			}
+
+		}
+		function calculate() {
+			toggle_hide()
+			var params = '';
 			var totalValue = 0;
 			var grade = document.quiz.elements[1].value;
 			for( var i=0; i<document.quiz.elements.length; i++ )
@@ -87,45 +118,56 @@
 
 						// weighted values; NEEDS TO BE TWEAKED
 						if (grade == "MS" && fieldName == "self_starter"){
-							fieldValue = fieldValue * 2
+							fieldValue = fieldValue * 2;
 						}
 						if (grade == "HS" && fieldName == "self_starter"){
-							fieldValue = fieldValue * 2
+							fieldValue = fieldValue * 2;
 						}
 						if (grade == "HS" && fieldName == "interaction"){
-							fieldValue = fieldValue * 3
+							fieldValue = fieldValue * 3;
 						}
 						if (grade == "MS" && fieldName == "interaction"){
-							fieldValue = fieldValue * 2
+							fieldValue = fieldValue * 2;
 						}
 						if (grade == "ES" && fieldName == "lc"){
-							fieldValue = fieldValue * 3
+							fieldValue = fieldValue * 3;
 						}
-						if (grade == "MS" && fieldName == "lc"){
-							fieldValue = fieldValue * 2
+						if (grade == "HS" && fieldName == "lc"){
+							fieldValue = fieldValue * 3;
+						}
+						if (grade == "HS" && fieldName == "lc"){
+							fieldValue = 3;
 						}
 						if (grade == "MS" && fieldName == "live"){
-							fieldValue = fieldValue * 2
+							fieldValue = fieldValue * 2;
 						}
 						if (grade == "HS" && fieldName == "live"){
-							fieldValue = fieldValue * 2
+							fieldValue = fieldValue * 2;
 						}
 						totalValue += Number(fieldValue);
 					}
 				}
 			}
+			clear_radio()
 			//min value if all questions answered: 6
 			//mid value: 19
 			//Max value if all questions answered: 31+
 			// NEEDS TO BE TWEAKED
-			if (totalValue < 13){
-				document.querySelector("p").innerHTML = "Results: Remote learning may not be the best option for you.";
+
+			if (totalValue < 13 ){
+				document.querySelector("p").innerHTML = "Remote learning may not be the best option for you.";
 			}
 			if (totalValue >= 13 && totalValue <=27){
-				document.querySelector("p").innerHTML = "Results: Remote learning may be a good option for you!";
+				document.querySelector("p").innerHTML = "Remote learning may be a good option for you!";
 			}
 			if (totalValue > 27){
-				document.querySelector("p").innerHTML = "Results: Remote learning looks like a great option for you!";
+				document.querySelector("p").innerHTML = "Remote learning looks like a great option for you!";
+			}
+			if (totalValue == 0 ){
+				document.querySelector("p").innerHTML = "";
+			}
+			if (totalValue == 0 && document.getElementById("questions").style.display == "none"){
+				document.querySelector("p").innerHTML = "No Results, please try again.";
 			}
 		}
 	</script>
