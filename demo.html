@@ -25,76 +25,103 @@
   <body>
     <form name="quiz" action="javascript:;" onsubmit="calculate(this)">
 		<fieldset>
-			<legend>GCVS Online Learning Sustainability Questionnaire</legend>
+			<legend>Is Virtual Learning the Right Fit for Me?</legend>
 			<ol id="questions">
 				<li>Which grade band are you interested in?<br>
 				  <input type="radio" name="grade" value="ES">1-4<br>
 				  <input type="radio" name="grade" value="MS">5-8<br>
 				  <input type="radio" name="grade" value="HS">9-12<br>
 				</li>
+				<br>
 				<li>Do you consider yourself / your student a self-starter?<br>
 				  <input type="radio" name="self_starter" value=3>Yes, I am great at initiating tasks<br>
 				  <input type="radio" name="self_starter" value=2>No, it is hard to begin<br>
 				  <input type="radio" name="self_starter" value=1>It depends<br>
 				</li>
+				<br>
+				<!-- The needs to calculated different values according to Grade Level -->
 				<li>Who is the most responsible for what and how much you learn?<br>
-				  <input type="radio" name="responsible" value=2>Teacher is the most responsible person<br>
-				  <input type="radio" name="responsible" value=3>Student is the most responsible<br>
-				  <input type="radio" name="responsible" value=1>Parents and school administrators<br>
+				  <input type="radio" name="responsible" value=1>Teacher is the most responsible person<br>
+				  <input type="radio" name="responsible" value=2>Student is the most responsible<br>
+				  <input type="radio" name="responsible" value=3>Learning Coach (LC)* and school administrators<br>
 				</li>
+				<br>
+				<article class="LC-explaination">
+				</article>
+				<!-- The needs specific result according to answer -->
+				<li> My student / I will have a  Learning Coach (LC)* who will be available during the school hours. <br>
+				  <input type="radio" name="lc" value=2>Yes<br>
+				  <input type="radio" name="lc" value=1>No<br>
+				</li>
+				<br>
+				<!-- The needs specific result according to answer -->
 				<li>Which statement best describe student's computer skills?<br>
 				  <input type="radio" name="skills" value=3>I am comfortable with electronic mail, web browsing, word processing, and file management.<br>
 				  <input type="radio" name="skills" value=2>I have basic computer skills, I could figure it out with basic instructions.<br>
 				  <input type="radio" name="skills" value=1>I am not sure if my skills are up to date, and computers can frustrate me.<br>
 				</li>
+				<br>
 				<li>As a student, I:<br>
 					<input type="radio" name="assist" value=3>Can do my assignments, stay focused, and finish coursework ahead of time without being reminded.<br>
 					<input type="radio" name="assist" value=2>Need reminders from the teacher to stay focused and finish coursework on time.<br>
 					<input type="radio" name="assist" value=1>Need a lot of assistance staying focused and motivated to complete my coursework.<br>
-				  </li>
+				</li>
+				<br>
 				<li>How often do you submit your assignments on time?<br>
 				  <input type="radio" name="assignment" value=3>I always complete assignments thoroughly and on time.<br>
 				  <input type="radio" name="assignment" value=2>I usually complete assignments on time.<br>
 				  <input type="radio" name="assignment" value=1>Rarely. I have a problem starting tasks and often do no complete them.<br>
 				</li>
+				<br>
 				<li>I find social interaction very important in school:<br>
 				  <input type="radio" name="interaction" value=1>Yes, I need constant communication with peers to feel as a part of community<br>
 				  <input type="radio" name="interaction" value=3>No, people make me anxious.<br>
-				  <input type="radio" name="interaction" value=2>Somewhat. I am ok either way<br>
+				  <input type="radio" name="interaction" value=3>Somewhat. I am ok either way<br>
 				</li>
-				<li>My student will have a Learning Coach (LC) who will be available during the school hours.<br>
-				  <input type="radio" name="lc" value=3>Yes<br>
-				  <input type="radio" name="lc" value=2>No<br>
-				  <input type="radio" name="lc" value=1>Not for all school day<br>
-				</li>
+				<br>
+				<!-- The needs specific result according to answer -->
 				<li>I am comfortable traveling to all on-site, live assessments like MCAS<br>
 				  <input type="radio" name="live" value=3>Yes<br>
-				  <input type="radio" name="live" value=1>No<br>
-				  <input type="radio" name="live" value=2>I am only comfortable testing remotely<br>
+				  <input type="radio" name="live" value=2>No<br>
+				  <input type="radio" name="live" value=1>I am only comfortable testing remotely<br>
 				</li>
+				<br>
 				<li>My student / I am great self-advocate and easily communicate any potential problems with school staff.<br>
 				  <input type="radio" name="communicate" value=3>Yes, I am a strong communicator.<br>
-				  <input type="radio" name="communicate" value=1>No, I prefer people reach out to me.<br>
-				  <input type="radio" name="communicate" value=2>Sometimes<br>
+				  <input type="radio" name="communicate" value=2>No, I prefer people reach out to me.<br>
+				  <input type="radio" name="communicate" value=1>Sometimes<br>
 				</li>
+				<br>
+				<!-- The needs specific result according to answer -->
 				<li>How often do you/ your student check email?<br>
-				  <input type="radio" name="email" value=4>Constantly<br>
+				  <input type="radio" name="email" value=3>Constantly<br>
 				  <input type="radio" name="email" value=3>1-2 times a day<br>
-				  <input type="radio" name="email" value=2>Weekly<br>
-				  <input type="radio" name="email" value="-3">I don't use an email.<br>
+				  <input type="radio" name="email" value=1>Weekly<br>
+				  <input type="radio" name="email" value="1">I don't use an email.<br>
 				</li>
+				<br>
 			</ol>
+			<p>* Some language in application uses the term Learning Coach or LC: Active and involved<br>
+				Learning Coaches (parents/guardians/adults) are essential for the success of the student.<br>
+				Learning Coaches are the primary support person for the student.
+			</p>
 			<p id="results"></p>
 			<input type="submit" id='btn'>
 		</fieldset>
     </form>
 	<script type="text/javascript">
-		function toggle_hide() {
+		function hide() {
 			var x = document.getElementById("questions");
+			var y = document.getElementById("btn");
 		  if (x.style.display === "none") {
 		    x.style.display = "block";
 		  } else {
 		    x.style.display = "none";
+		  }
+			if (y.style.display === "none") {
+		    y.style.display = "block";
+		  } else {
+		    y.style.display = "none";
 		  }
 		}
 		function clear_radio() {
@@ -105,10 +132,41 @@
 
 		}
 		function calculate() {
-			toggle_hide()
-			var params = '';
+			hide();
 			var totalValue = 0;
 			var grade = document.quiz.elements[1].value;
+			var message = '';
+			const message1 = `
+			Thank you for taking time to complete this test! Looks like virtual learning is a great fit for you!<br>
+			If you have any questions contact <a href="mailto:info@gcvs.org">info@gcvs.org</a> for more information.
+			`;
+			const message2 = `
+			Thank you for taking time to complete this test! Virtual learning requires a good amount of technology skills,<br>
+			you may want to connect with <a href="mailto:info@gcvs.org">info@gcvs.org</a> to learn more about what it means to be a virtual student.<br>
+			We are looking forward to chatting with you!
+			`;
+			const message3 = `
+			Thank you for taking time to complete this test! Virtual learning requires a Learning Coach who is<br>
+			always going to be a present support for the student.<br>
+			Chat with <a href="mailto:info@gcvs.org">info@gcvs.org</a> to learn more about what being a virtual student means!
+			`;
+			const message4 = `
+			Thank you for taking time to complete this test! Virtual setting looks like a good fit!<br>
+			A couple things to consider: students are required to travel to all state exams.<br>
+			Chat with <a href="mailto:info@gcvs.org">info@gcvs.org</a> to learn more about what being a virtual student means!
+			`;
+			const message5 = `
+			Thank you for taking time to complete this test! Virtual Learning may be a good fit for you!<br>
+			Most GCVS communication happens via email so becoming friends with your mailbox may be a necessity for a successful virtual experience.<br>
+			Chat with <a href="mailto:info@gcvs.org">info@gcvs.org</a> to learn more about what being a virtual student means!
+			`;
+			const message6 = `
+			Thank you for taking time to complete this test! Virtual Learning is a unique setting<br>
+			that is a great fit for some students, and quite challenging for others.<br>
+			Chat with <a href="mailto:info@gcvs.org">info@gcvs.org</a> to learn more about what being a virtual student means!
+			`;
+
+			// Loop through list items to calculate results
 			for( var i=0; i<document.quiz.elements.length; i++ )
 			{
 				if (document.quiz.elements[i].checked) {
@@ -116,59 +174,54 @@
 					var fieldValue = document.quiz.elements[i].value;
 					if (fieldName != "grade") {
 
-						// weighted values; NEEDS TO BE TWEAKED
-						if (grade == "MS" && fieldName == "self_starter"){
-							fieldValue = fieldValue * 2;
+						// weighted values for question 3
+						if ((grade == "HS" || grade == "MS") && fieldName == "responsible"){
+							if (fieldValue == 2){
+								fieldValue = 3;
+							}
 						}
-						if (grade == "HS" && fieldName == "self_starter"){
-							fieldValue = fieldValue * 2;
+						// specific message for question: 4
+						if (fieldName == "lc"){
+							if (fieldValue == 1 ){
+								message = message3;
+							}
 						}
-						if (grade == "HS" && fieldName == "interaction"){
-							fieldValue = fieldValue * 3;
+						// specific message for question: 5
+						if (fieldName == "skills"){
+							if (fieldValue == 2 || fieldValue == 1){
+								message = message2;
+							}
 						}
-						if (grade == "MS" && fieldName == "interaction"){
-							fieldValue = fieldValue * 2;
+						// specific message for question: 9
+						if (fieldName == "live"){
+							if (fieldValue ==  2 || fieldValue == 1){
+								message = message4;
+							}
 						}
-						if (grade == "ES" && fieldName == "lc"){
-							fieldValue = fieldValue * 3;
+						// specific message for question: 11
+						if (fieldName == "email"){
+							if (fieldValue ==  1){
+								message = message5;
+							}
 						}
-						if (grade == "HS" && fieldName == "lc"){
-							fieldValue = fieldValue * 3;
-						}
-						if (grade == "HS" && fieldName == "lc"){
-							fieldValue = 3;
-						}
-						if (grade == "MS" && fieldName == "live"){
-							fieldValue = fieldValue * 2;
-						}
-						if (grade == "HS" && fieldName == "live"){
-							fieldValue = fieldValue * 2;
-						}
+
 						totalValue += Number(fieldValue);
 					}
 				}
 			}
-			clear_radio()
-			//min value if all questions answered: 6
-			//mid value: 19
-			//Max value if all questions answered: 31+
-			// NEEDS TO BE TWEAKED
+			clear_radio();
 
-			if (totalValue < 13 ){
-				document.querySelector("p").innerHTML = "Remote learning may not be the best option for you.";
+			// Set message according to calculated value
+			if (message == '' && totalValue >= 27 ){
+				message = message1;
 			}
-			if (totalValue >= 13 && totalValue <=27){
-				document.querySelector("p").innerHTML = "Remote learning may be a good option for you!";
+			if (message == '' && totalValue < 27 ){
+				message = message6;
 			}
-			if (totalValue > 27){
-				document.querySelector("p").innerHTML = "Remote learning looks like a great option for you!";
-			}
-			if (totalValue == 0 ){
-				document.querySelector("p").innerHTML = "";
-			}
-			if (totalValue == 0 && document.getElementById("questions").style.display == "none"){
-				document.querySelector("p").innerHTML = "No Results, please try again.";
-			}
+
+			// Display the results
+			document.querySelector("p").innerHTML = message;
+
 		}
 	</script>
   </body>
